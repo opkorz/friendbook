@@ -1,0 +1,10 @@
+{% extends "base.htm" %}
+    {% block content %}
+        <h2>Followers</h2>
+        <div>
+            {{list_2}}
+            {%for item in list_1%}
+                <span>{{item}}</span><br>
+            {% endfor %}
+        </div>
+    {% endblock %}

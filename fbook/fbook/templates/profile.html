@@ -1,0 +1,12 @@
+{% extends "base.htm" %}
+    var user = {{user}}    
+    {% block content %}
+        <h2>Profile</h2>        
+        <div>
+            <h4>
+            <br><span></strong>First name: </strong></span>{{user.first_name}}
+            <br><span></strong>Last name: </strong></span>{{user.last_name}}
+            <br><span></strong>Email: </strong></span>{{user.email}}
+            </h4>
+        </div>
+    {% endblock %}

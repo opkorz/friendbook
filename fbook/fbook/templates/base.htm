@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Friendbook</title>
+ 
+    <meta name="author" content="Your Inspiration Web - Nando [php, xhtml, css], Sara [graphic design]" />
+    <meta name="keywords" content="single web page, single page website, single page template, single page layout"
+    />
+ 	<meta name="description" content=""
+	/>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    
+    <!-- [template css] begin -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/960.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/print.css" type="text/css" media="print" /> 
+    <!--[if IE]>
+        <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection" />
+    <![endif]-->
+    <!-- [template css] end -->
+    
+    <!-- [favicon] begin -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	<!-- [favicon] end -->
+	
+	<!-- Some hacks for the dreaded IE6 ;) -->
+    <!--[if lt IE 7]>
+        <link rel="stylesheet" href="css/ie6.css" type="text/css" media="screen" />
+        <script type="text/javascript">
+            var clear="images/clear.gif";
+        </script>
+        <script type="text/javascript" src="js/unitpngfix.js"></script>
+    <![endif]-->
+    
+	<script type="text/javascript" src="{{ STATIC_URL }}js/mootools-yui-compressed.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script> 
+    <script type="text/javascript" charset="utf-8">jQuery.noConflict();</script>
+
+	
+	<!-- START CUFON -->
+	<script type="text/javascript" src="{{ STATIC_URL }}js/cufon-yui.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/dustismo_400.font.js"></script>
+	<script type="text/javascript">
+       Cufon.replace('h1,ul#nav,h2,h4', {
+           hover: true,
+           fontFamily: 'dustismo' 
+       });
+    </script>
+	<!-- END CUFON -->
+
+<body id="home-page">
+	
+	<!-- START TOP FADE -->
+    <div class="top-bg">&nbsp;</div>
+    <!-- END TOP FADE -->
+    
+    <!-- START BOTTOM FADE -->
+    <div class="bottom-bg">&nbsp;</div>
+    <!-- END BOTTOM FADE -->
+    
+    <!-- START HEADER -->
+    <div class="container_12">
+        
+        <!-- START NAVIGATION SECTION -->
+        <div class="grid_3 alpha">
+        
+            <div class="fixed-column">
+                
+                <!-- START LOGO -->
+                <a href="" title="home page">
+                    <img src="{{ STATIC_URL }}images/logo2.png" alt="logo" class="logo" />
+                </a>
+                <!-- END LOGO -->
+                
+                <!-- START NAV -->
+                <ul id="nav">
+                    <li><a href="{% url profile user.username %}">profile</a></li>                  
+                    <li><a href="{% url follower user.username %}">followers</a></li>
+                    
+                    <li><a href="{% url following user.username %}">following</a></li>
+                    <li><a href="{% url user %}">all users</a></li>
+                    
+                </ul>
+                <!-- END NAV -->
+  
+                <!-- DO NOT REMOVE: START CREDITS -->
+                <div class="credits">
+                    <!--<a rel="license" href="http://creativecommons.org/licenses/by/2.5/it/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.5/it/80x15.png" /></a><br /><span xmlns:dc="http://purl.org/dc/elements/1.1/" property="dc:title">Your Inspiration Folio</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.yourinspirationweb.com" property="cc:attributionName" rel="cc:attributionURL">Your Inspiration Web</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/it/">Creative Commons Attribuzione 2.5 Italia License</a>.--> powered by
+                    <a href="http://www.yourinspirationweb.com/en/free-website-template-present-your-portfolio-online-in-a-single-webpage/" title="The Community of Inspiration Dedicated to Webdesign">
+                         YIW
+                    </a>
+                </div>
+                <!-- END CREDITS -->
+    
+            </div>
+        
+        </div>
+        <!-- END NAVIGATION SECTION -->
+        
+        <div class="grid_9 omega right-column">
+        
+            <!-- START HOME PAGE -->
+            <div class="home">
+                <!--<img src="{{ STATIC_URL }}images/text-home.jpg" alt="contenuto-home" />-->
+                <div class="grid_5 alpha">
+                
+                    <div class="container-about">
+                        {% block content %}
+                
+                        {% endblock %}
+                    </div>
+                </div>
+            <div class="home-bottom-bg"></div>
+            <!-- END HOME PAGE -->
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+    
+	<!--[if IE]>
+      <script type="text/javascript"> Cufon.now(); </script>
+    <![endif]-->  
+</body>
+</html>

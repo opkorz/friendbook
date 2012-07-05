@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+	    <title>Esphar Medical Center</title>                  
+
+	    <meta charset="utf-8" />
+	    <meta name="description" content="" />
+
+	    <link rel="stylesheet" media="screen, projection" href="{{ STATIC_URL }}css/site.css" />
+        {% block css %}{% endblock %}
+	    <!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+	    
+	    <script type=text/javascript src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+        {% block js %}{% endblock %}
+    </head>
+    
+    <body>	
+	    {% block extra_div %}
+	    {% endblock %}
+        <div class="grid">
+            <div id="content">
+		        {%block content%}
+		        {% endblock %}
+            </div><!-- /content -->	
+        </div>
+	    </div>
+
+    </body>
+
+</html>

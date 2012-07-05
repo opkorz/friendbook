@@ -1,0 +1,12 @@
+from django.conf.urls.defaults import *
+
+from views import *
+
+urlpatterns = patterns('',
+    url(r'^$',  profile, name='profile'),
+    url(r'^(?P<username>\w+)/follower/$', follower, name='follower'),
+    url(r'^(?P<username>\w+)/following/$',following, name='following')
+
+
+
+)
