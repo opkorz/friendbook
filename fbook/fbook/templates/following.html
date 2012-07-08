@@ -2,8 +2,10 @@
     {% block content %}
         <h2>Following</h2>        
         <div>
+            <ul>
             {%for item in list_2%}
-                <span>{{item}}</span><br>
+                <li><span>{{item}}</span></li>
             {% endfor %}
+            </ul>
         </div>
     {% endblock %}

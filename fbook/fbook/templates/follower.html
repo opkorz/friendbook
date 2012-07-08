@@ -2,9 +2,10 @@
     {% block content %}
         <h2>Followers</h2>
         <div>
-            {{list_2}}
+            <ul>
             {%for item in list_2%}
-                <span>{{item}}</span><br>
+                <li><span>{{item}}</span></li>
             {% endfor %}
+            </ul>
         </div>
     {% endblock %}

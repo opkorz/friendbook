@@ -75,7 +75,7 @@
                 
                 <!-- START NAV -->
                 <ul id="nav">
-                    <li><a href="{% url index %}">profile</a></li>                  
+                    <li><a href="{% url profile user.username %}">profile</a></li>                  
                     <li><a href="{% url follower user.username %}">followers</a></li>
                     
                     <li><a href="{% url following user.username %}">following</a></li>
@@ -111,7 +111,7 @@
                         {% endblock %}
                     </div>
                 </div>
-            <div class="home-bottom-bg"></div>
+                <div class="home-bottom-bg"></div>
             <!-- END HOME PAGE -->
         </div>
         

@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 import settings
-#from fbook.friend import views
+from fbook.friend import views
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -20,11 +20,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^$', TemplateView.as_view(template_name='base.htm'), name='index'),
-    url(r'^admin', include(admin.site.urls), name='admin'),
-    url(r'^user/$', TemplateView.as_view(template_name='user.html'), name='user'),
-    url(r'^(?P<username>\w+)/$', TemplateView.as_view(template_name='profile.html'), name='profile'),
-    url(r'^(?P<username>\w+)/follower/$', TemplateView.as_view(template_name='follower.html'), name='follower'),
-    url(r'^(?P<username>\w+)/following/$', TemplateView.as_view(template_name='following.html'), name='following')
+    url(r'^admin/$', include(admin.site.urls), name='admin'),
+    url(r'^user/$', views.user, name='user'),
+    url(r'^(?P<username>\w+)/$', views.profile, name='profile'),
+    url(r'^(?P<username>\w+)/follower/$', views.follower, name='follower'),
+    url(r'^(?P<username>\w+)/following/$', views.following, name='following')
 )
 
 if settings.DEBUG:
