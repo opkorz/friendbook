@@ -75,10 +75,12 @@
                 
                 <!-- START NAV -->
                 <ul id="nav">
+                    {% if user.is_authenticated %}
                     <li><a href="{% url profile user.username %}">profile</a></li>                  
                     <li><a href="{% url follower user.username %}">followers</a></li>
                     
                     <li><a href="{% url following user.username %}">following</a></li>
+                    {% endif %}
                     <li><a href="{% url user %}">all users</a></li>
                     
                 </ul>
